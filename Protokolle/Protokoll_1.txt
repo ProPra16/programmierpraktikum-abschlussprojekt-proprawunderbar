@@ -1,47 +1,24 @@
 Teilnehmer der Versammlung:
-
 - Felix Wolfgang Karl Schäfer
-
 - Tim Riemann
-
 - Marlon Grottke
-
 - Michelle Walloschek
-
 - Alexander Gundert
 
-
-
 Review letzter Woche:
-
 Alle Gruppenmitglieder haben sich getroffen
-
 und einen Überblick der Aufgabenstellung
-
 bekommen. Außerdem wurde jedem Mitglied
-
 eine Aufgabe bis zum nächsten Treffen
-
 zugeteilt.
 
-
-
 Plan für die nächste Woche:
-
 Blaupause für das Programm erstellen und die
-
 weitere Entwicklung planen.
 
-
-
 Aufteilung für nächste Woche:
-
 Felix:     Einarbeitung in Gradle
-
 Tim:       Grundgerüst entwickeln
-
 Alex:      Grundgerüst entwickeln
-
 Marlon:    GUI entwerfen
-
 Michelle:  GUI entwerfen
