@@ -1,5 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+mainClassName = "tddt/UI/UIRunner"
 
 repositories { mavenCentral() }
 
