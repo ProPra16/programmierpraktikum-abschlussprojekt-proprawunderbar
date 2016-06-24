@@ -11,7 +11,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import tddt.code.*;
 
 public class Eingabe_UI extends Application {
     public Stage stage = new Stage();
