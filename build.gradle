@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+
+sourceCompatibility = '1.8'
+
+mainClassName = "tddt/UI/UIRunner"
+
+repositories { mavenCentral() }
+
+dependencies{	compile 'junit:junit:4.12'
+		compile 'de.hhu.stups:virtual-kata-lib:1.0.0'
+}
