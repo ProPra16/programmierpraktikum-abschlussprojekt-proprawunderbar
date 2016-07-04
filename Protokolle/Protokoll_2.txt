@@ -1,0 +1,22 @@
+Datum des Protokolls: 29.06.16
+
+Teilnehmer der Versammlung:
+- Felix Wolfgang Karl Schäfer
+- Tim Riemann
+- Marlon Grottke
+- Michelle Walloschek
+- Alexander Gundert
+
+Review letzter Woche:
+Alle Aufgaben der letzen Woche wurden abgearbeitet und jeder hat seienen
+Teil gemacht.
+
+Plan für die nächste Woche:
+Jeder seinen neuen Teil soweit einbauen wie es geht/ überarbeiten.
+
+Aufteilung für nächste Woche:
+Felix:     Timer verbessern und einbauen
+Tim:       Compile.java weiterentwickeln/ verbessern
+Alex:      Tests entwerfen
+Marlon:    Tests entwerfen
+Michelle:  GUI überarbeiten/ Projektspeicherung des Users 
