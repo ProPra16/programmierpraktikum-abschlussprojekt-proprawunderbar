@@ -18,6 +18,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import tddt.code.Loader;
 
 
 public class UIRunner extends Application {
@@ -27,13 +28,14 @@ public class UIRunner extends Application {
     public void start(Stage primaryStage) throws Exception{
         Button Neues_Projekt = new Button("Neue Übung Auswählen");
         Neues_Projekt.setOnAction(e -> {
-        	Test_UI.runTestUI();
+            try {Loader.ask();}
+            catch (Exception e) {}
         	stage.close();
         });
 
         Button Laden = new Button("Zuletzt verwendete Übung laden");
         Laden.setOnAction(e -> {
-            //Loader.load();
+            Loader.load();
             stage.close();
         });
 
