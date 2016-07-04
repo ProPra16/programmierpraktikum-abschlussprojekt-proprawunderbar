@@ -30,6 +30,9 @@ public class Compile {
 			CompileError[] codeErrorArray= new CompileError[codeErrors];
 			codeErrorArray = codeError.toArray(codeErrorArray);
 			for(int i= 0; i<codeErrors;i++){
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+"\n In class"+ codeClassName+":");
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+codeErrorArray[i].getCodeLineContainingTheError());
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+codeErrorArray[i].toString());
 				System.out.println("In class"+ codeClassName+":");
 				System.out.println(codeErrorArray[i].getCodeLineContainingTheError());
 				System.out.println(codeErrorArray[i].toString());
@@ -37,10 +40,14 @@ public class Compile {
 			CompileError[] testErrorArray= new CompileError[codeErrors];
 			testErrorArray = testError.toArray(testErrorArray);
 			for(int i= 0; i<testErrors;i++){
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+testErrorArray[i].getCodeLineContainingTheError());
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+testErrorArray[i].toString());
 				System.out.println(testErrorArray[i].getCodeLineContainingTheError());
 				System.out.println(testErrorArray[i].toString());
 			}
+			if(status.equals("writeTest"))
 			Test_UI.switchStatus();
+			return;
 		}
 		int failedTests=0;
 		TestResult testResult = compiler.getTestResult();
@@ -51,6 +58,8 @@ public class Compile {
 				TestFailure[] failureArray = new TestFailure[testFailures.size()];
 				failureArray = testFailures.toArray(failureArray);
 				for(int i=0; i<failureArray.length;i++){
+					Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMethodName());
+					Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMessage());
 					System.out.println(failureArray[i].getMethodName());
 					System.out.println(failureArray[i].getMessage());
 				}

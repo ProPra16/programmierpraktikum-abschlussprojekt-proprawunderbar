@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package tddt.UI;
 
 import javafx.geometry.Insets;
@@ -26,7 +26,7 @@ public class Test_UI {
 	private static int height = 1000;
 	static TextArea testCode = new TextArea();
 	static TextArea sourceCode = new TextArea();
-	static TextArea compileOutput = new TextArea();
+	public static TextArea compileOutput = new TextArea();
 	private static String status = "writeTest";
 	private static Text a = new Text("Erstellen sie ihren ersten Test:");
 
@@ -59,7 +59,7 @@ public class Test_UI {
 
 		Button compile = new Button("Kompilieren");
 		compile.setOnAction(e -> {
-			//       	Compile.compile(sourceCode.getText(),"HalloWelt", testCode.getText(), "HalloWeltTest",status);
+			      	Compile.compile(sourceCode.getText(),"HalloWelt", testCode.getText(), "HalloWeltTest",status);
 		});
 		compile.setPrefSize(500,30);
 		compile.setFont(Font.font("Verdana",20));
@@ -119,6 +119,8 @@ public class Test_UI {
 		compileOutput.setMaxHeight(540);
 		compileOutput.setEffect(blend);
 		compileOutput.setCache(true);
+		compileOutput.setEditable(false);
+	
 		String s = "";
 		testCode.setText(s);
 //		sourceCode.setEditable(false);
@@ -161,5 +163,5 @@ public class Test_UI {
 			a.setText("Bitte geben sie einen fehlschlagenden Test ein!");
 		}
     }
->>>>>>> origin/master
+
 }

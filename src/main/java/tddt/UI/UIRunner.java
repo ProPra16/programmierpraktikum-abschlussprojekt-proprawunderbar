@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package tddt.UI;
 
 import javafx.application.Application;
@@ -29,7 +29,7 @@ public class UIRunner extends Application {
         Button Neues_Projekt = new Button("Neue Übung Auswählen");
         Neues_Projekt.setOnAction(e -> {
             try {Loader.ask();}
-            catch (Exception e) {}
+            catch (Exception ex) {}
         	stage.close();
         });
 
@@ -109,5 +109,5 @@ public class UIRunner extends Application {
         stage.setTitle("Test-Driven-Development-Trainer");
         stage.show();
     }
->>>>>>> origin/master
+
 }
