@@ -1,0 +1,21 @@
+Datum des Protokolls: 07.07.16
+
+Teilnehmer der Versammlung:
+- Felix Wolfgang Karl Schäfer
+- Tim Riemann
+- Marlon Grottke
+- Michelle Walloschek
+- Alexander Gundert
+
+Review letzter Woche:
+Die Aufgaben der letzten Woche wurden weitestgehend bearbeitet,
+der Rest, der noch nicht fertig ist, wird diese Woche bearbeitet.
+Plan für die nächste Woche:
+Jeder seinen neuen Teil soweit einbauen wie es geht/ überarbeiten.
+
+Aufteilung für nächste Woche:
+Felix:     Einfügen der Babystep und Tracker- Funktion
+Tim:       Einlesen der XML-Datei
+Alex:      Weiter Tests entwerfen
+Marlon:    Weiter Tests entwerfen
+Michelle:  UIs weiter entwickeln(Den Knöpfen eine Funktion geben)
