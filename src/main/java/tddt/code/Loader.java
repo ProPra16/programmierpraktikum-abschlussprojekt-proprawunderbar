@@ -13,13 +13,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.UI.Test_UI;
 import tddt.UI.Test_UI;
+
+import java.io.File;
+import java.io.IOException;
 
 
 public class Loader{
-    public static void load(){
-
-    }
     public static void ask() throws Exception {
         Stage stage = new Stage();
         BorderPane border = new BorderPane();
@@ -38,11 +39,21 @@ public class Loader{
         blend.setBottomInput(shadow);
         blend.setTopInput(innerShadow);
 
+        String a=  System.getProperty("user.dir");
+
         Button One = new Button("1");
         One.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         One.setEffect(blend);
+        File OneExists = new File(a+"\\Aufgabenstellung\\1Aufgabenstellung.txt");
+        if(!OneExists.exists()){
+            One.setMouseTransparent(true);
+            One.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
         One.setOnAction(e -> {
-            Test_UI.runTestUI("1");
+            try {
+                Test_UI.runTestUI("1");
+            } catch (IOException e1) {
+            }
             stage.close();
         });
 
@@ -50,7 +61,9 @@ public class Loader{
         Two.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Two.setEffect(blend);
         Two.setOnAction(e -> {
-            Test_UI.runTestUI("2");
+            try {
+                Test_UI.runTestUI("2");
+            } catch (IOException e1) {}
             stage.close();
         });
 
@@ -58,14 +71,22 @@ public class Loader{
         Three.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Three.setEffect(blend);
         Three.setOnAction(e -> {
-            Test_UI.runTestUI("3");
+            try {
+                Test_UI.runTestUI("3");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             stage.close();
         });
         Button Four = new Button("4");
         Four.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Four.setEffect(blend);
         Four.setOnAction(e -> {
-            Test_UI.runTestUI("4");
+            try {
+                Test_UI.runTestUI("4");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             stage.close();
         });
 
@@ -73,7 +94,11 @@ public class Loader{
         Five.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Five.setEffect(blend);
         Five.setOnAction(e -> {
-            Test_UI.runTestUI("5");
+            try {
+                Test_UI.runTestUI("5");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             stage.close();
         });
 
@@ -81,14 +106,22 @@ public class Loader{
         Six.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Six.setEffect(blend);
         Six.setOnAction(e -> {
-            Test_UI.runTestUI("6");
+            try {
+                Test_UI.runTestUI("6");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             stage.close();
         });
         Button Seven = new Button("7");
         Seven.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Seven.setEffect(blend);
         Seven.setOnAction(e -> {
-            Test_UI.runTestUI("7");
+            try {
+                Test_UI.runTestUI("7");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             stage.close();
         });
 
@@ -96,7 +129,11 @@ public class Loader{
         Eight.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Eight.setEffect(blend);
         Eight.setOnAction(e -> {
-            Test_UI.runTestUI("8");
+            try {
+                Test_UI.runTestUI("8");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             stage.close();
         });
 
@@ -104,7 +141,11 @@ public class Loader{
         Nine.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         Nine.setEffect(blend);
         Nine.setOnAction(e -> {
-            Test_UI.runTestUI("9");
+            try {
+                Test_UI.runTestUI("9");
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             stage.close();
         });
 

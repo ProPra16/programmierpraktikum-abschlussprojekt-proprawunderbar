@@ -20,6 +20,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import tddt.code.Compile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class Test_UI {
 	private static Stage stage = new Stage();
 	private static int width = 1750;
@@ -28,12 +32,17 @@ public class Test_UI {
 	static TextArea sourceCode = new TextArea();
 	public static TextArea compileOutput = new TextArea();
 	private static String status = "writeTest";
-	private static Text a = new Text("Erstellen sie ihren ersten Test:");
+	public static String Dir=  System.getProperty("user.dir");
+	public static Text a = new Text("");
 
 
-	public static void runTestUI(String x) {
+	public static void runTestUI(String x) throws IOException {
 		BorderPane borderPane = new BorderPane();
 		GridPane text = new GridPane();
+
+		String input= new String(String.valueOf(Files.readAllLines(Paths.get(Dir+"\\Aufgabenstellung\\"+x+"Aufgabenstellung.txt"))));
+		String input2 = input.substring(1, input.length()-1);
+		a.setText(input2);
 
 		DropShadow shadow = new DropShadow();
 		shadow.setOffsetY(3.0f);
@@ -67,7 +76,7 @@ public class Test_UI {
 		compile.setCache(true);
 		compile.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
 
-		Button test = new Button("Projekt Testen");
+		Button test = new Button("Zurück");
 		test.setPrefSize(500,30);
 		test.setFont(Font.font("Verdana",20));
 		test.setEffect(shadow);
