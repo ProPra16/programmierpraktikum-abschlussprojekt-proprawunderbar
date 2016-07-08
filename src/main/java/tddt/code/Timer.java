@@ -46,7 +46,7 @@ public class Timer {
 				try {
 					Thread.sleep(20);
 					// Um zu verhindern, dass die
-					// die CPU sonst auf 100% läuft.
+					// die CPU sonst auf 100% laeuft.
 				} catch (Exception e) {
 					// nix!
 				}
