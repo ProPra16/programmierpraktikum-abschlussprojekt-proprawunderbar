@@ -35,7 +35,12 @@ public class UIRunner extends Application {
 
         Button Laden = new Button("Zuletzt verwendete Übung laden");
         Laden.setOnAction(e -> {
-            Loader.load();
+            try {
+				Loader.ask();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
             stage.close();
         });
 

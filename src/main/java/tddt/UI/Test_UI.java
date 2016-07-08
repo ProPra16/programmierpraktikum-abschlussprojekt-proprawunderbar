@@ -32,7 +32,6 @@ public class Test_UI {
 	static TextArea sourceCode = new TextArea();
 	public static TextArea compileOutput = new TextArea();
 	private static String status = "writeTest";
-	public static String Dir=  System.getProperty("user.dir");
 	public static Text a = new Text("");
 
 
@@ -40,7 +39,7 @@ public class Test_UI {
 		BorderPane borderPane = new BorderPane();
 		GridPane text = new GridPane();
 
-		String input= new String(String.valueOf(Files.readAllLines(Paths.get(Dir+"\\Aufgabenstellung\\"+x+"Aufgabenstellung.txt"))));
+		String input= new String(String.valueOf(Files.readAllLines(Paths.get(x+"Aufgabenstellung.txt"))));
 		String input2 = input.substring(1, input.length()-1);
 		a.setText(input2);
 
@@ -68,6 +67,7 @@ public class Test_UI {
 
 		Button compile = new Button("Kompilieren");
 		compile.setOnAction(e -> {
+					System.out.println("Hallo Welt!");
 			      	Compile.compile(sourceCode.getText(),"HalloWelt", testCode.getText(), "HalloWeltTest",status);
 		});
 		compile.setPrefSize(500,30);
