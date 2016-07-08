@@ -41,15 +41,15 @@ public class Loader{
 
         String a=  System.getProperty("user.dir");
 
-        Button One = new Button("1");
-        One.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        One.setEffect(blend);
+        Button one = new Button("1");
+        one.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        one.setEffect(blend);
         File OneExists = new File(a+"\\Aufgabenstellung\\1Aufgabenstellung.txt");
         if(!OneExists.exists()){
-            One.setMouseTransparent(true);
-            One.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+            one.setMouseTransparent(true);
+            one.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
-        One.setOnAction(e -> {
+        one.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("1");
             } catch (IOException e1) {
@@ -57,31 +57,47 @@ public class Loader{
             stage.close();
         });
 
-        Button Two = new Button("2");
-        Two.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Two.setEffect(blend);
-        Two.setOnAction(e -> {
+        Button two = new Button("2");
+        two.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        two.setEffect(blend);
+        File TwoExists = new File(a+"\\Aufgabenstellung\\2Aufgabenstellung.txt");
+        if(!TwoExists.exists()){
+            two.setMouseTransparent(true);
+            two.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        two.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("2");
-            } catch (IOException e1) {}
-            stage.close();
-        });
-
-        Button Three = new Button("3");
-        Three.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Three.setEffect(blend);
-        Three.setOnAction(e -> {
-            try {
-                Test_UI.runTestUI("3");
             } catch (IOException e1) {
-                e1.printStackTrace();
             }
             stage.close();
         });
-        Button Four = new Button("4");
-        Four.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Four.setEffect(blend);
-        Four.setOnAction(e -> {
+
+        Button three = new Button("3");
+        three.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        three.setEffect(blend);
+        File ThreeExists = new File(a+"\\Aufgabenstellung\\3Aufgabenstellung.txt");
+        if(!ThreeExists.exists()){
+            three.setMouseTransparent(true);
+            three.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        three.setOnAction(e -> {
+            try {
+                Test_UI.runTestUI("3");
+            } catch (IOException e1) {
+            }
+            stage.close();
+        });
+
+        Button four = new Button("4");
+        four.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        four.setEffect(blend);
+        File FourExists = new File(a+"\\Aufgabenstellung\\4Aufgabenstellung.txt");
+        if(!FourExists.exists()){
+            four.setMouseTransparent(true);
+            four.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        four.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("4");
             } catch (IOException e1) {
@@ -90,10 +106,15 @@ public class Loader{
             stage.close();
         });
 
-        Button Five = new Button("5");
-        Five.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Five.setEffect(blend);
-        Five.setOnAction(e -> {
+        Button five = new Button("5");
+        five.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        five.setEffect(blend);
+        File FiveExists = new File(a+"\\Aufgabenstellung\\5Aufgabenstellung.txt");
+        if(!FiveExists.exists()){
+            five.setMouseTransparent(true);
+            five.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        five.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("5");
             } catch (IOException e1) {
@@ -102,10 +123,15 @@ public class Loader{
             stage.close();
         });
 
-        Button Six = new Button("6");
-        Six.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Six.setEffect(blend);
-        Six.setOnAction(e -> {
+        Button six = new Button("6");
+        six.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        six.setEffect(blend);
+        File SixExists = new File(a+"\\Aufgabenstellung\\6Aufgabenstellung.txt");
+        if(!SixExists.exists()){
+            six.setMouseTransparent(true);
+            six.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        six.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("6");
             } catch (IOException e1) {
@@ -113,10 +139,15 @@ public class Loader{
             }
             stage.close();
         });
-        Button Seven = new Button("7");
-        Seven.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Seven.setEffect(blend);
-        Seven.setOnAction(e -> {
+        Button seven = new Button("7");
+        seven.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        seven.setEffect(blend);
+        File SevenExists = new File(a+"\\Aufgabenstellung\\7Aufgabenstellung.txt");
+        if(!SevenExists.exists()){
+            seven.setMouseTransparent(true);
+            seven.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        seven.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("7");
             } catch (IOException e1) {
@@ -125,10 +156,15 @@ public class Loader{
             stage.close();
         });
 
-        Button Eight = new Button("8");
-        Eight.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Eight.setEffect(blend);
-        Eight.setOnAction(e -> {
+        Button eight = new Button("8");
+        eight.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        eight.setEffect(blend);
+        File EightExists = new File(a+"\\Aufgabenstellung\\8Aufgabenstellung.txt");
+        if(!EightExists.exists()){
+            eight.setMouseTransparent(true);
+            eight.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        eight.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("8");
             } catch (IOException e1) {
@@ -137,10 +173,15 @@ public class Loader{
             stage.close();
         });
 
-        Button Nine = new Button("9");
-        Nine.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
-        Nine.setEffect(blend);
-        Nine.setOnAction(e -> {
+        Button nine = new Button("9");
+        nine.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
+        nine.setEffect(blend);
+        File NineExists = new File(a+"\\Aufgabenstellung\\9Aufgabenstellung.txt");
+        if(!NineExists.exists()){
+            nine.setMouseTransparent(true);
+            nine.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
+        }
+        nine.setOnAction(e -> {
             try {
                 Test_UI.runTestUI("9");
             } catch (IOException e1) {
@@ -157,15 +198,15 @@ public class Loader{
         root.setVgap(10);
         root.setPadding(new Insets(75,75,75,75));
 
-        root.add(One, 0, 0);
-        root.add(Two, 1, 0);
-        root.add(Three, 2, 0);
-        root.add(Four, 0, 1);
-        root.add(Five, 1, 1);
-        root.add(Six, 2, 1);
-        root.add(Seven, 0, 2);
-        root.add(Eight, 1, 2);
-        root.add(Nine, 2, 2);
+        root.add(one, 0, 0);
+        root.add(two, 1, 0);
+        root.add(three, 2, 0);
+        root.add(four, 0, 1);
+        root.add(five, 1, 1);
+        root.add(six, 2, 1);
+        root.add(seven, 0, 2);
+        root.add(eight, 1, 2);
+        root.add(nine, 2, 2);
 
 
         stage.setScene(new Scene(border, 350, 350));
