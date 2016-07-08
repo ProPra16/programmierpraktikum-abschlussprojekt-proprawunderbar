@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import sample.UI.Test_UI;
+import tddt.UI.Test_UI;
 import tddt.UI.Test_UI;
 
 import java.io.File;
@@ -44,16 +44,20 @@ public class Loader{
         Button One = new Button("1");
         One.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         One.setEffect(blend);
-        File OneExists = new File(a+"\\Aufgabenstellung\\1Aufgabenstellung.txt");
+        File OneExists = new File("1Aufgabenstellung.txt");
         if(!OneExists.exists()){
             One.setMouseTransparent(true);
             One.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         One.setOnAction(e -> {
-            try {
-                Test_UI.runTestUI("1");
-            } catch (IOException e1) {
-            }
+       
+                try {
+					Test_UI.runTestUI("1");
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+          
             stage.close();
         });
 
