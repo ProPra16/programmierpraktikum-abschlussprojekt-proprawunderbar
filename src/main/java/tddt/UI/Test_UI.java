@@ -33,11 +33,13 @@ public class Test_UI {
 	public static TextArea compileOutput = new TextArea();
 	private static String status = "writeTest";
 	public static Text a = new Text("");
+	public static String backup;
 
 
 	public static void runTestUI(String x, Exercise exercise) throws IOException {
 		BorderPane borderPane = new BorderPane();
 		GridPane text = new GridPane();
+		backup = exercise.classCode;
 
 		String input= new String(String.valueOf(Files.readAllLines(Paths.get(x+"Aufgabenstellung.txt"))));
 		String input2 = input.substring(1, input.length()-1);
@@ -67,8 +69,10 @@ public class Test_UI {
 
 		Button compile = new Button("Kompilieren");
 		compile.setOnAction(e -> {
-					System.out.println("Hallo Welt!");
+//					System.out.println("Hallo Welt!");
+					compileOutput.setText("");
 			      	Compile.compile(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName,status);
+			      	
 		});
 		System.out.println(exercise.className);
 		System.out.println(exercise.testName);
@@ -78,13 +82,19 @@ public class Test_UI {
 		compile.setCache(true);
 		compile.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
 
-		Button test = new Button("Zurück");
-		test.setPrefSize(500,30);
-		test.setFont(Font.font("Verdana",20));
-		test.setEffect(shadow);
-		test.setCache(true);
-		test.setStyle("-fx-font-weight: bold;");
-
+		Button returnButton = new Button("Zurück");
+		returnButton.setPrefSize(500,30);
+		returnButton.setFont(Font.font("Verdana",20));
+		returnButton.setEffect(shadow);
+		returnButton.setCache(true);
+		returnButton.setStyle("-fx-font-weight: bold;");
+		returnButton.setOnAction(e -> {
+			if(status.equals("fixTest"))
+				returnToTest();
+				
+			
+		});
+		
 		a.setFont(Font.font("Verdana", 30));
 		a.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
 		a.setFill(Color.DARKGRAY);
@@ -162,7 +172,7 @@ public class Test_UI {
 		buttons.add(color1,0,1);
 		buttons.add(save,1,1);
 		buttons.add(compile,2,1);
-		buttons.add(test,3,1);
+		buttons.add(returnButton,3,1);
 		buttons.add(color2,4,1);
 
 		stage.setScene(new Scene(borderPane, width, height));
@@ -181,6 +191,7 @@ public class Test_UI {
 		}
 		else if(status.equals("fixTest")){
 			status = "writeTest";
+			backup = sourceCode.getText();
 			testCode.setEditable(true);
 			testCode.setStyle("-fx-background-color: #E0E0E0");//Farbe wählen
 			sourceCode.setEditable(false);
@@ -188,5 +199,9 @@ public class Test_UI {
 			a.setText("Bitte geben sie einen fehlschlagenden Test ein!");
 		}
     }
+	public static void returnToTest(){
+		sourceCode.setText(backup);
+		switchStatus();
+	}
 
 }

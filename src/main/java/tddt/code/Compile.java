@@ -13,6 +13,7 @@ import vk.core.internal.InternalCompiler;
 
 public class Compile {
 	public static void compile(String code,String codeClassName, String tests, String testClassName, String status){
+
 		CompilationUnit test = new CompilationUnit(testClassName, tests, true);
 		CompilationUnit program = new CompilationUnit(codeClassName, code, false);
 		// JavaStringCompiler compiler = CompilerFactory.getCompiler(test,program);

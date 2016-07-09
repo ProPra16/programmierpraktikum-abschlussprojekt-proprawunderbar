@@ -69,14 +69,14 @@ public class Loader{
         Button two = new Button("2");
         two.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         two.setEffect(blend);
-        File TwoExists = new File(a+"2Aufgabenstellung.txt");
+        File TwoExists = new File("2Aufgabenstellung.txt");
         if(!TwoExists.exists()){
             two.setMouseTransparent(true);
             two.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         two.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("2", null);
+                Test_UI.runTestUI("2", Loader.exerciseList.get(1));
             } catch (IOException e1) {
             }
             stage.close();
@@ -92,7 +92,7 @@ public class Loader{
         }
         three.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("3", null);
+                Test_UI.runTestUI("3", Loader.exerciseList.get(2));
             } catch (IOException e1) {
             }
             stage.close();
@@ -108,7 +108,7 @@ public class Loader{
         }
         four.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("4", null);
+                Test_UI.runTestUI("4", Loader.exerciseList.get(3));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -125,7 +125,7 @@ public class Loader{
         }
         five.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("5", null);
+                Test_UI.runTestUI("5", Loader.exerciseList.get(4));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -142,7 +142,7 @@ public class Loader{
         }
         six.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("6", null);
+                Test_UI.runTestUI("6", Loader.exerciseList.get(5));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -158,7 +158,7 @@ public class Loader{
         }
         seven.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("7", null);
+                Test_UI.runTestUI("7", Loader.exerciseList.get(6));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -175,7 +175,7 @@ public class Loader{
         }
         eight.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("8", null);
+                Test_UI.runTestUI("8", Loader.exerciseList.get(7));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -192,7 +192,7 @@ public class Loader{
         }
         nine.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("9", null);
+                Test_UI.runTestUI("9", Loader.exerciseList.get(8));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
