@@ -111,6 +111,17 @@ public class Test_UI {
 		source.setEffect(blend);
 		source.setCache(true);
 
+		Button color1=new Button();
+		color1.setPrefSize(40,40);
+		if(!color1.equals("-fx-base: #FFFFFF")){
+			//hier die abbruchbedingung
+		}
+		Button color2=new Button();
+		if(!color2.equals("-fx-base: #FFFFFF")){
+			//hier die abbruchbedingung
+		}
+		color2.setPrefSize(40,40);
+
 		center.add(tests, 0, 0);
 		center.add(source, 1, 0);
 		center.setHgap(10);
@@ -148,9 +159,11 @@ public class Test_UI {
 
 		buttons.setAlignment(Pos.TOP_CENTER);
 		buttons.setPadding(new Insets(20));
-		buttons.add(save,0,1);
-		buttons.add(compile,1,1);
-		buttons.add(test,2,1);
+		buttons.add(color1,0,1);
+		buttons.add(save,1,1);
+		buttons.add(compile,2,1);
+		buttons.add(test,3,1);
+		buttons.add(color2,4,1);
 
 		stage.setScene(new Scene(borderPane, width, height));
 		stage.initStyle(StageStyle.UTILITY);
