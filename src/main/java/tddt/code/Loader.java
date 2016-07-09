@@ -1,6 +1,11 @@
 package tddt.code;
 
 
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import exercises.Exercise;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,14 +19,11 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import tddt.UI.Test_UI;
-import tddt.UI.Test_UI;
-
-import java.io.File;
-import java.io.IOException;
 
 
 public class Loader{
-    public static void ask() throws Exception {
+	static List<Exercise> exerciseList;
+    public static void ask(List<Exercise> exercises) throws Exception {
         Stage stage = new Stage();
         BorderPane border = new BorderPane();
         GridPane root = new GridPane();
@@ -47,7 +49,7 @@ public class Loader{
         one.setEffect(blend);
         File OneExists = new File("1Aufgabenstellung.txt");
 
-      
+        exerciseList = exercises;
 
         if(!OneExists.exists()){
             one.setMouseTransparent(true);
@@ -57,7 +59,7 @@ public class Loader{
 
         one.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("1");
+                Test_UI.runTestUI("1", Loader.exerciseList.get(0) );
             } catch (IOException e1) {
             }
 
@@ -74,7 +76,7 @@ public class Loader{
         }
         two.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("2");
+                Test_UI.runTestUI("2", null);
             } catch (IOException e1) {
             }
             stage.close();
@@ -90,7 +92,7 @@ public class Loader{
         }
         three.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("3");
+                Test_UI.runTestUI("3", null);
             } catch (IOException e1) {
             }
             stage.close();
@@ -106,7 +108,7 @@ public class Loader{
         }
         four.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("4");
+                Test_UI.runTestUI("4", null);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -123,7 +125,7 @@ public class Loader{
         }
         five.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("5");
+                Test_UI.runTestUI("5", null);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -140,7 +142,7 @@ public class Loader{
         }
         six.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("6");
+                Test_UI.runTestUI("6", null);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -156,7 +158,7 @@ public class Loader{
         }
         seven.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("7");
+                Test_UI.runTestUI("7", null);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -173,7 +175,7 @@ public class Loader{
         }
         eight.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("8");
+                Test_UI.runTestUI("8", null);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -190,7 +192,7 @@ public class Loader{
         }
         nine.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("9");
+                Test_UI.runTestUI("9", null);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

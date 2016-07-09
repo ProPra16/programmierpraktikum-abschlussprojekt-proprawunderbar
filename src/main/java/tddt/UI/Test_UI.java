@@ -1,6 +1,11 @@
 
 package tddt.UI;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import exercises.Exercise;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -11,7 +16,6 @@ import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -19,10 +23,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import tddt.code.Compile;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class Test_UI {
 	private static Stage stage = new Stage();
@@ -35,7 +35,7 @@ public class Test_UI {
 	public static Text a = new Text("");
 
 
-	public static void runTestUI(String x) throws IOException {
+	public static void runTestUI(String x, Exercise exercise) throws IOException {
 		BorderPane borderPane = new BorderPane();
 		GridPane text = new GridPane();
 
@@ -68,8 +68,10 @@ public class Test_UI {
 		Button compile = new Button("Kompilieren");
 		compile.setOnAction(e -> {
 					System.out.println("Hallo Welt!");
-			      	Compile.compile(sourceCode.getText(),"HalloWelt", testCode.getText(), "HalloWeltTest",status);
+			      	Compile.compile(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName,status);
 		});
+		System.out.println(exercise.className);
+		System.out.println(exercise.testName);
 		compile.setPrefSize(500,30);
 		compile.setFont(Font.font("Verdana",20));
 		compile.setEffect(shadow);
@@ -118,20 +120,21 @@ public class Test_UI {
 		sourceCode.setMinHeight(height-380);
 		sourceCode.setEffect(blend);
 		sourceCode.setCache(true);
+		sourceCode.setText(exercise.classCode);
 
 		testCode.setMinWidth((width/2)-25);
 		testCode.setMinHeight(height-380);
 		testCode.setEffect(blend);
 		testCode.setCache(true);
-
+		testCode.setText(exercise.testCode);
+	
+		
 		compileOutput.setMinWidth(width-60);
 		compileOutput.setMaxHeight(540);
 		compileOutput.setEffect(blend);
 		compileOutput.setCache(true);
 		compileOutput.setEditable(false);
 	
-		String s = "";
-		testCode.setText(s);
 //		sourceCode.setEditable(false);
 		center.add(testCode, 0, 1);
 		center.add(sourceCode, 1, 1);
