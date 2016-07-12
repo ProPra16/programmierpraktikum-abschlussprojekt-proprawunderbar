@@ -27,7 +27,7 @@ public class RomanNumbersTest {
 			<timetracking value="True" />
 		</config>
 	</exercise>
-	<exercise name="Römische Zahlen 1">
+	<exercise name="Römische Zahlen 2">
 		<description>Konvertiert arabische in römische Zahlen</description>
 		<classes>
 			<class name="RomanNumberConverter">
