@@ -31,7 +31,7 @@ public class Test_UI {
 	static TextArea testCode = new TextArea();
 	static TextArea sourceCode = new TextArea();
 	public static TextArea compileOutput = new TextArea();
-	private static String status = "writeTest";
+	public static String status = "writeTest";
 	public static Text a = new Text("");
 	public static String backup;
 
@@ -71,7 +71,8 @@ public class Test_UI {
 		compile.setOnAction(e -> {
 //					System.out.println("Hallo Welt!");
 					compileOutput.setText("");
-			      	Compile.compile(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName,status);
+			      	Compile.compile(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName);
+			      	Compile.runTests();
 			      	
 		});
 		System.out.println(exercise.className);

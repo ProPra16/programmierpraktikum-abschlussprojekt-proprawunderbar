@@ -12,15 +12,23 @@ import vk.core.api.TestResult;
 import vk.core.internal.InternalCompiler;
 
 public class Compile {
-	public static void compile(String code,String codeClassName, String tests, String testClassName, String status){
+	
+	static int failedTests;
+	static CompilationUnit test = new CompilationUnit("", "", true);
+	static CompilationUnit program = new CompilationUnit("", "", false);
+	static CompilationUnit[] dummy = {test , program};
+	static InternalCompiler compiler = new InternalCompiler(dummy);
+	static CompilerResult compilerResult;
+	
+	public static void compile(String code,String codeClassName, String tests, String testClassName){
 
-		CompilationUnit test = new CompilationUnit(testClassName, tests, true);
-		CompilationUnit program = new CompilationUnit(codeClassName, code, false);
+		test = new CompilationUnit(testClassName, tests, true);
+		program = new CompilationUnit(codeClassName, code, false);
 		// JavaStringCompiler compiler = CompilerFactory.getCompiler(test,program);
 		CompilationUnit[] cus = {test , program};
-		InternalCompiler compiler = new InternalCompiler(cus);
+		compiler = new InternalCompiler(cus);
 		compiler.compileAndRunTests();
-		CompilerResult compilerResult = compiler.getCompilerResult();
+		compilerResult = compiler.getCompilerResult();
 		if(compilerResult.hasCompileErrors()){
 			Collection<CompileError> codeError = compilerResult.getCompilerErrorsForCompilationUnit(program);
 			Collection<CompileError> testError = compilerResult.getCompilerErrorsForCompilationUnit(test);
@@ -46,28 +54,34 @@ public class Compile {
 				System.out.println(testErrorArray[i].getCodeLineContainingTheError());
 				System.out.println(testErrorArray[i].toString());
 			}
-			if(status.equals("writeTest"))
+			if(Test_UI.status.equals("writeTest"))
 			Test_UI.switchStatus();
-			return;
 		}
-		int failedTests=0;
+	}
+		
+		
+	public static void runTests(){
+		if(compilerResult.hasCompileErrors())
+			return;
+		failedTests=0;
 		TestResult testResult = compiler.getTestResult();
 		if(testResult != null)
 			failedTests = testResult.getNumberOfFailedTests();
-			if(failedTests > 0){
-				Collection<TestFailure> testFailures = testResult.getTestFailures();
-				TestFailure[] failureArray = new TestFailure[testFailures.size()];
-				failureArray = testFailures.toArray(failureArray);
-				for(int i=0; i<failureArray.length;i++){
-					Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMethodName());
-					Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMessage());
-					System.out.println(failureArray[i].getMethodName());
-					System.out.println(failureArray[i].getMessage());
-				}
+		if(failedTests > 0){
+			Collection<TestFailure> testFailures = testResult.getTestFailures();
+			TestFailure[] failureArray = new TestFailure[testFailures.size()];
+			failureArray = testFailures.toArray(failureArray);
+			for(int i=0; i<failureArray.length;i++){
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMethodName());
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMessage());
+				System.out.println(failureArray[i].getMethodName());
+				System.out.println(failureArray[i].getMessage());
 			}
-			if(failedTests == 1 && status.equals("writeTest"))
-				Test_UI.switchStatus();
-			if(failedTests == 0 && status.equals("fixTest"))
-				Test_UI.switchStatus();
 		}
+		if(failedTests == 1 && Test_UI.status.equals("writeTest"))
+			Test_UI.switchStatus();
+		if(failedTests == 0 && Test_UI.status.equals("fixTest"))
+			Test_UI.switchStatus();
+	}
 }
+

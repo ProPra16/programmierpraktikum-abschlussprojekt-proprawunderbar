@@ -41,8 +41,6 @@ public class Loader{
         blend.setBottomInput(shadow);
         blend.setTopInput(innerShadow);
 
-
-
         Button one = new Button("1");
         one.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         one.setEffect(blend);
