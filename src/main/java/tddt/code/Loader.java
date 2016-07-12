@@ -41,7 +41,6 @@ public class Loader{
         blend.setBottomInput(shadow);
         blend.setTopInput(innerShadow);
 
-        String a=  System.getProperty("user.dir");
 
 
         Button one = new Button("1");
