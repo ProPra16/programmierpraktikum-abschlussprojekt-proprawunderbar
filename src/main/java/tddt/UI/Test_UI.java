@@ -33,11 +33,11 @@ public class Test_UI {
 	static TextArea sourceCode = new TextArea();
 	public static TextArea compileOutput = new TextArea();
 	public static String status = "writeTest";
-	public static Text a = new Text("");
+	public static Text titel = new Text("");
 	public static String sourceBackup;
 	public static String testBackup;
 	public static Text timerText = new Text();
-	public static Timer timer = new Timer(timerText, true, 20);
+	public static Timer timer = new Timer(timerText, false, 20);
 
 	public static void runTestUI(String x, Exercise exercise) throws IOException {
 		timer.start();
@@ -48,7 +48,7 @@ public class Test_UI {
 
 		String input = new String(String.valueOf(Files.readAllLines(Paths.get(x + "Aufgabenstellung.txt"))));
 		String input2 = input.substring(1, input.length() - 1);
-		a.setText(input2);
+		titel.setText(input2);
 
 		DropShadow shadow = new DropShadow();
 		shadow.setOffsetY(3.0f);
@@ -65,13 +65,24 @@ public class Test_UI {
 		blend.setTopInput(innerShadow);
 
 		GridPane buttons = new GridPane();
-		Button save = new Button("Speichern");
-		save.setPrefSize(500, 30);
-		save.setFont(Font.font("Verdana", 20));
-		save.setEffect(shadow);
-		save.setCache(true);
-		save.setStyle("-fx-font-weight: bold;");
-
+		Button refactor = new Button("Refactor");
+		refactor.setPrefSize(500, 30);
+		refactor.setFont(Font.font("Verdana", 20));
+		refactor.setEffect(shadow);
+		refactor.setCache(true);
+		refactor.setStyle("-fx-font-weight: bold;");
+		refactor.setOnAction(e -> {
+			if(status.equals("writeTest")){
+			sourceBackup = sourceCode.getText();
+			testCode.setText(testBackup);
+			switchStatus();
+			titel.setText("Refactoring");
+			}
+			else {
+				compileOutput.setText("");
+		      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName,compileOutput);
+			}
+		});
 		Button compile = new Button("Kompilieren");
 		compile.setOnAction(e -> {
 //					System.out.println("Hallo Welt!");
@@ -100,14 +111,14 @@ public class Test_UI {
 
 		});
 
-		a.setFont(Font.font("Verdana", 30));
-		a.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
-		a.setFill(Color.DARKGRAY);
-		a.setEffect(blend);
-		a.setCache(true);
+		titel.setFont(Font.font("Verdana", 30));
+		titel.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
+		titel.setFill(Color.DARKGRAY);
+		titel.setEffect(blend);
+		titel.setCache(true);
 		text.setAlignment(Pos.CENTER);
 		text.setPadding(new Insets(25, 25, 25, 25));
-		text.add(a, 1, 1, 1, 1);
+		text.add(titel, 1, 1, 1, 1);
 
 		GridPane center = new GridPane();
 		center.setPadding(new Insets(0, 25, 0, 15));
@@ -173,7 +184,7 @@ public class Test_UI {
 		buttons.setAlignment(Pos.TOP_CENTER);
 		buttons.setPadding(new Insets(20));
 		buttons.add(color1, 0, 1);
-		buttons.add(save, 1, 1);
+		buttons.add(refactor, 1, 1);
 		buttons.add(compile, 2, 1);
 		buttons.add(returnButton, 3, 1);
 		buttons.add(color2, 4, 1);
@@ -197,7 +208,7 @@ public class Test_UI {
 			sourceCode.setEditable(true);
 			sourceCode.setStyle("-fx-background-color: #E0E0E0"); // Farbe
 																	// waehlen
-			a.setText("Bitte überarbeiten Sie ihr Programm, sodass alle Tests laufen!");
+			titel.setText("Bitte überarbeiten Sie ihr Programm, sodass alle Tests laufen!");
 		}
 
 		else if (status.equals("fixTest")) {
@@ -210,7 +221,7 @@ public class Test_UI {
 			sourceCode.setEditable(false);
 			sourceCode.setStyle("-fx-background-color: #E0E0E0"); // Farbe
 																	// waehlen
-			a.setText("Bitte geben sie einen fehlschlagenden Test ein!");
+			titel.setText("Bitte geben sie einen fehlschlagenden Test ein!");
 		}
 	}
 
