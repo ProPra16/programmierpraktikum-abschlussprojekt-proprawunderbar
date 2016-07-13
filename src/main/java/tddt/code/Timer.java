@@ -1,6 +1,7 @@
 package tddt.code;
 
 import javafx.scene.text.Text;
+import tddt.UI.Test_UI;
 
 /* Benutzung:
 	Timer erstellen:
@@ -46,7 +47,7 @@ public class Timer {
 					seconds++;
 					if (babystep) {
 						if (seconds >= maxSeconds) {
-							// HIER
+							Test_UI.reset();
 						}
 					}
 
