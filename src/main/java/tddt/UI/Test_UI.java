@@ -36,10 +36,11 @@ public class Test_UI {
 	public static Text a = new Text("");
 	public static String sourceBackup;
 	public static String testBackup;
-	public static Text timerText;
-	public static Timer timer = new Timer(timerText, true, 15);
+	public static Text timerText = new Text();
+	public static Timer timer = new Timer(timerText, true, 20);
 
 	public static void runTestUI(String x, Exercise exercise) throws IOException {
+		timer.start();
 		BorderPane borderPane = new BorderPane();
 		GridPane text = new GridPane();
 		sourceBackup = exercise.classCode;
@@ -176,7 +177,8 @@ public class Test_UI {
 		buttons.add(compile, 2, 1);
 		buttons.add(returnButton, 3, 1);
 		buttons.add(color2, 4, 1);
-
+		
+		stage.setOnCloseRequest(e -> {timer.kill();});
 		stage.setScene(new Scene(borderPane, width, height));
 		stage.initStyle(StageStyle.UTILITY);
 		stage.setTitle("Übung" + x);
@@ -184,6 +186,7 @@ public class Test_UI {
 	}
 
 	public static void switchStatus() {
+		timer.setTo(0);
 		if (status.equals("writeTest")) {
 			sourceBackup = sourceCode.getText();
 			testBackup = testCode.getText();
@@ -217,12 +220,13 @@ public class Test_UI {
 	}
 
 	public static void reset() {
-		if (status.equals("writeTest")) {
+		System.out.println("Hallo");
+		if (status.equals("fixTest")) {
 			sourceCode.setText(sourceBackup);
 			timer.reset();
 		}
 
-		else if (status.equals("fixTest")) {
+		else if (status.equals("writeTest")) {
 			testCode.setText(testBackup);
 			timer.reset();
 		}
