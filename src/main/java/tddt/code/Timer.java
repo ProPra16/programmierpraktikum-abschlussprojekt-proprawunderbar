@@ -18,18 +18,20 @@ import javafx.scene.text.Text;
 	
 	Am besten bei Programmende kill benuzten:
 	  timer.kill();
-	
-	RTFM.
 */
+
 public class Timer {
 	volatile int seconds;
 	volatile boolean clocking;
 	volatile boolean running;
+	volatile int maxSeconds;
+	volatile boolean babystep;
 
-	public Timer(Text text) {
+	public Timer(Text text, boolean babystep, int maxSeconds) {
 		seconds = 0;
 		clocking = false;
 		running = true;
+		this.maxSeconds = maxSeconds;
 		text.setText(MinutesSeconds());
 
 		Thread clock = new Thread(() -> {
@@ -40,11 +42,18 @@ public class Timer {
 					} catch (Exception e) {
 						// nix!
 					}
+
 					seconds++;
+					if (babystep) {
+						if (seconds >= maxSeconds) {
+							// HIER
+						}
+					}
+
 					text.setText(MinutesSeconds());
 				}
 				try {
-					Thread.sleep(20);
+					Thread.sleep(10);
 					// Um zu verhindern, dass die
 					// die CPU sonst auf 100% laeuft.
 				} catch (Exception e) {
@@ -80,7 +89,6 @@ public class Timer {
 	public void setTo(int newSeconds) {
 		seconds = newSeconds;
 	}
-
 
 	private int getSeconds() {
 		int temp_seconds = seconds;
