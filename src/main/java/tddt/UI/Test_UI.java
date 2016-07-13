@@ -71,8 +71,7 @@ public class Test_UI {
 		compile.setOnAction(e -> {
 //					System.out.println("Hallo Welt!");
 					compileOutput.setText("");
-			      	Compile.compile(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName);
-			      	Compile.runTests();
+			      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName);
 			      	
 		});
 		System.out.println(exercise.className);

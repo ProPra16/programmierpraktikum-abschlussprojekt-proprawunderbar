@@ -1,6 +1,5 @@
 package tddt.code;
 
-
 import java.util.Collection;
 
 import tddt.UI.Test_UI;
@@ -13,12 +12,10 @@ import vk.core.internal.InternalCompiler;
 
 public class Compile {
 	
-	static int failedTests;
-	static CompilationUnit test = new CompilationUnit("", "", true);
-	static CompilationUnit program = new CompilationUnit("", "", false);
-	static CompilationUnit[] dummy = {test , program};
-	static InternalCompiler compiler = new InternalCompiler(dummy);
-	static CompilerResult compilerResult;
+	static int failedTests = 0;
+	static CompilationUnit test;
+	static CompilationUnit program;
+	public static CompilerResult compilerResult;
 	
 	public static void compile(String code,String codeClassName, String tests, String testClassName){
 
@@ -26,7 +23,7 @@ public class Compile {
 		program = new CompilationUnit(codeClassName, code, false);
 		// JavaStringCompiler compiler = CompilerFactory.getCompiler(test,program);
 		CompilationUnit[] cus = {test , program};
-		compiler = new InternalCompiler(cus);
+		InternalCompiler compiler = new InternalCompiler(cus);
 		compiler.compileAndRunTests();
 		compilerResult = compiler.getCompilerResult();
 		if(compilerResult.hasCompileErrors()){
@@ -60,10 +57,13 @@ public class Compile {
 	}
 		
 		
-	public static void runTests(){
+	public static void runTests(String code,String codeClassName, String tests, String testClassName){
+		compile(code ,codeClassName , tests, testClassName);
 		if(compilerResult.hasCompileErrors())
 			return;
 		failedTests=0;
+		CompilationUnit[] cus = {test , program};
+		InternalCompiler compiler = new InternalCompiler(cus);
 		TestResult testResult = compiler.getTestResult();
 		if(testResult != null)
 			failedTests = testResult.getNumberOfFailedTests();
