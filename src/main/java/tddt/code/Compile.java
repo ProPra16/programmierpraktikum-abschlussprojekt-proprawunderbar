@@ -55,7 +55,7 @@ public class Compile {
 				System.out.println(testErrorArray[i].toString());
 			}
 			if(Test_UI.status.equals("writeTest"))
-			Test_UI.switchStatus();
+			Test_UI.switchStatus(true);
 		}
 	}
 		
@@ -83,9 +83,9 @@ public class Compile {
 			}
 		}
 		if(failedTests == 1 && Test_UI.status.equals("writeTest"))
-			Test_UI.switchStatus();
+			Test_UI.switchStatus(true);
 		if(failedTests == 0 && Test_UI.status.equals("fixTest"))
-			Test_UI.switchStatus();
+			Test_UI.switchStatus(true);
 	}
 }
 

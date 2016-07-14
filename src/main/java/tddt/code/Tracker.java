@@ -13,31 +13,33 @@ public class Tracker {
 		public Times(){}
 	}*/
 	
-	public static List code = new ArrayList();
-	public static List test = new ArrayList();
+	public static List<Integer> code = new ArrayList<>();
+	public static List<Integer> test = new ArrayList<>();
 	//public static List<Times> times = new ArrayList<Times>();
 	
 	//public Times temp = new Times();
-	static int codeTemp;
-	static int testTemp;
+	static int codeTemp = 0;
+	static int testTemp = 0;
 	
-	static boolean clocking = false;
+	static boolean clocking = true;
 	static boolean running = true;
 	
-	public class Timer {
-		
-		Thread clock = new Thread(() -> {
+	public static void startTimer() {
+		System.out.println("Hallo");
+		new Thread(() -> {
 			while (running) {
+				
 				while (clocking) {
+				
 					try {
 						Thread.sleep(1000);
 					} catch (Exception e) {
-						
+						e.printStackTrace();
 					}
-					if (status == "code") {
+					if (status.equals("code")) {
 						codeTemp++;
 					}
-					else if (status == "test") {
+					else if (status.equals("test")) {
 						testTemp++;
 					}
 				}
@@ -47,21 +49,23 @@ public class Tracker {
 					
 				}
 			}
-		});
+		}).start();
 	}
 	
 	
 	public static void displayTimes() {
 		if (code.size() == 0 || test.size() == 0) return;
+		System.out.println("Da");
 		for (int i = 0; i < code.size(); i++) {
 			//Times printTemp = new Times();
 			//printTemp = times.get(i);
-			System.out.println("Das Schreiben des " + i+1 + ". Tests hat " + test.get(i) + " Sekunden gedauert.");
-			System.out.println("Das Schreiben des " + i+1 + ". Codes hat " + code.get(i) + " Sekunden gedauert.");
+			
+			System.out.println("Das Schreiben des " + (i+1) + ". Tests hat " + test.get(i) + " Sekunden gedauert.");
+			System.out.println("Das Schreiben des " + (i+1) + ". Codes hat " + code.get(i) + " Sekunden gedauert.");
 		}
 	}
 	
-	public static void switchStatus() {
+	public static void switchStatus(	) {
 		if (status == "code"){
 			//times.add(temp);
 			code.add(codeTemp);

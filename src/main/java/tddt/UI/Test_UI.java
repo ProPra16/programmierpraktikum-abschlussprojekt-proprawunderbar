@@ -44,6 +44,7 @@ public class Test_UI {
 		timer = new Timer(timerText, exercise.babystep, exercise.time);
 
 		timer.start();
+		Tracker.startTimer();
 		BorderPane borderPane = new BorderPane();
 		GridPane text = new GridPane();
 		sourceBackup = exercise.classCode;
@@ -76,7 +77,7 @@ public class Test_UI {
 			if(status.equals("writeTest")){
 			sourceBackup = sourceCode.getText();
 			testCode.setText(testBackup);
-			switchStatus();
+			switchStatus(false);
 			titel.setText("Refactoring");
 			}
 			else {
@@ -118,6 +119,7 @@ public class Test_UI {
 		trackingButton.setCache(true);
 		trackingButton.setStyle("-fx-font-weight: bold;");
 		trackingButton.setOnAction(e ->{
+			
 			Tracker.displayTimes();
 		});
 
@@ -192,16 +194,17 @@ public class Test_UI {
 		buttons.add(returnButton, 2, 1);
 		buttons.add(trackingButton, 3, 1);
 		
-		stage.setOnCloseRequest(e -> {timer.kill();});
+		stage.setOnCloseRequest(e -> {timer.kill(); Tracker.kill();});
 		stage.setScene(new Scene(borderPane, width, height));
-		stage.initStyle(StageStyle.UTILITY);
+		stage.initStyle(StageStyle.UTILITY);	
 		stage.setTitle("Übung: " + exercise.exerciseName);
 		stage.show();
 	}
 
-	public static void switchStatus() {
+	public static void switchStatus(boolean track) {
 		timer.setTo(0);
-		Tracker.switchStatus();
+		if(track)
+			Tracker.switchStatus();
 		if (status.equals("writeTest")) {
 			sourceBackup = sourceCode.getText();
 			testBackup = testCode.getText();
@@ -231,7 +234,7 @@ public class Test_UI {
 
 	public static void returnToTest() {
 		sourceCode.setText(sourceBackup);
-		switchStatus();
+		switchStatus(false);
 	}
 
 	public static void reset() {
