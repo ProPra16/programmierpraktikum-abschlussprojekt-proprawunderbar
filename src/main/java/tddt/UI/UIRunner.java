@@ -40,6 +40,7 @@ import tddt.code.Loader;
 
 public class UIRunner extends Application {
     public Stage stage = new Stage();
+    public static void main(String[] args){launch(args);}
 
     @Override
     public void start(Stage primaryStage) throws Exception{
