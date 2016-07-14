@@ -1,0 +1,21 @@
+Datum des Protokolls: 14.07.16
+
+Teilnehmer der Versammlung:
+- Felix Wolfgang Karl Schaefer
+- Tim Riemann
+- Marlon Grottke
+- Michelle Walloschek
+- Alexander Gundert
+
+Review letzter Woche:
+-GradleBuild funktioniert nach kleinen Problemen wieder.
+-Das Testen der Programmlogik gestaltet sich komplizierter als gedacht
+-Babysteps funktionieren einwandfrei
+-Das Einlesen der XML-Dateien frunktioniert auch ohne Probleme(beim Ausführen des Programms)
+-Programmlogik wurde refractored
+
+Letze Schritte bis zur Abgabe:
+-Tests der Programmlogik versuchen zu implementieren
+-Tracking bzw ATDD implementieren (tendenz zu Tracking)
+-README und Benutzerhandbuch schreiben
+-Systembeschreibung formulieren

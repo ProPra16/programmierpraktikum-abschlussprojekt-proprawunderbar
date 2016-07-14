@@ -2,8 +2,6 @@
 package tddt.UI;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import exercises.Exercise;
 import javafx.geometry.Insets;
@@ -36,6 +34,7 @@ public class Test_UI {
 	public static Text titel = new Text("");
 	public static String sourceBackup;
 	public static String testBackup;
+	public static Text statusText = new Text();
 	public static Text timerText = new Text();
 	public static Timer timer;
 
@@ -111,15 +110,18 @@ public class Test_UI {
 
 		});
 
-		titel.setFont(Font.font("Verdana", 30));
-		titel.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
-		titel.setFill(Color.DARKGRAY);
-		titel.setEffect(blend);
-		titel.setCache(true);
+		textdesign(titel,blend);
+		textdesign(timerText,blend);
+		textdesign(statusText,blend);
+
 		text.setAlignment(Pos.CENTER);
 		text.setPadding(new Insets(25, 25, 25, 25));
 		text.add(titel, 1, 1, 1, 1);
-	
+
+		text.add(timerText,2,1,1,1);
+		text.add(statusText,2,2,1,1);
+		text.setHgap(750);
+
 
 		GridPane center = new GridPane();
 		center.setPadding(new Insets(0, 25, 0, 15));
@@ -138,16 +140,6 @@ public class Test_UI {
 		source.setEffect(blend);
 		source.setCache(true);
 
-		Button color1 = new Button();
-		color1.setPrefSize(40, 40);
-		if (!color1.equals("-fx-base: #FFFFFF")) {
-			// hier die Abbruchbedingung
-		}
-		Button color2 = new Button();
-		if (!color2.equals("-fx-base: #FFFFFF")) {
-			// hier die Abbruchbedingung
-		}
-		color2.setPrefSize(40, 40);
 
 		center.add(tests, 0, 0);
 		center.add(source, 1, 0);
@@ -184,11 +176,9 @@ public class Test_UI {
 
 		buttons.setAlignment(Pos.TOP_CENTER);
 		buttons.setPadding(new Insets(20));
-		buttons.add(color1, 0, 1);
 		buttons.add(refactor, 1, 1);
 		buttons.add(compile, 2, 1);
 		buttons.add(returnButton, 3, 1);
-		buttons.add(color2, 4, 1);
 		
 		stage.setOnCloseRequest(e -> {timer.kill();});
 		stage.setScene(new Scene(borderPane, width, height));
@@ -242,6 +232,13 @@ public class Test_UI {
 			testCode.setText(testBackup);
 			timer.reset();
 		}
+	}
+	public static void textdesign(Text text,Blend blend){
+		text.setFont(Font.font("Verdana", 30));
+		text.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
+		text.setFill(Color.DARKGRAY);
+		text.setEffect(blend);
+		text.setCache(true);
 	}
 
 }
