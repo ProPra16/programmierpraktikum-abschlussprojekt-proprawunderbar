@@ -119,6 +119,7 @@ public class Test_UI {
 		text.setAlignment(Pos.CENTER);
 		text.setPadding(new Insets(25, 25, 25, 25));
 		text.add(titel, 1, 1, 1, 1);
+	
 
 		GridPane center = new GridPane();
 		center.setPadding(new Insets(0, 25, 0, 15));
