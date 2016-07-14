@@ -34,6 +34,7 @@ public class Test_UI {
 	public static Text titel = new Text("");
 	public static String sourceBackup;
 	public static String testBackup;
+	public static Text statusText = new Text();
 	public static Text timerText = new Text();
 	public static Timer timer;
 
@@ -109,14 +110,16 @@ public class Test_UI {
 
 		});
 
-		titel.setFont(Font.font("Verdana", 30));
-		titel.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
-		titel.setFill(Color.DARKGRAY);
-		titel.setEffect(blend);
-		titel.setCache(true);
+		textdesign(titel);
+		textdesign(timerText);
+		textdesign(statusText);
+
 		text.setAlignment(Pos.CENTER);
 		text.setPadding(new Insets(25, 25, 25, 25));
 		text.add(titel, 1, 1, 1, 1);
+		text.add(timerText,2,1,1,1);
+		text.add(statusText,2,2,1,1);
+		text.setHgap(750);
 
 		GridPane center = new GridPane();
 		center.setPadding(new Insets(0, 25, 0, 15));
@@ -227,6 +230,13 @@ public class Test_UI {
 			testCode.setText(testBackup);
 			timer.reset();
 		}
+	}
+	public static void textdesign(Text text){
+		text.setFont(Font.font("Verdana", 30));
+		text.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
+		text.setFill(Color.DARKGRAY);
+		text.setEffect(blend);
+		text.setCache(true);
 	}
 
 }
