@@ -39,6 +39,7 @@ public class Test_UI {
 	public static Timer timer;
 
 	public static void runTestUI(Exercise exercise) throws IOException {
+			
 		timer = new Timer(timerText, exercise.babystep, exercise.time);
 
 		timer.start();
@@ -120,11 +121,11 @@ public class Test_UI {
 
 		text.add(timerText,2,1,1,1);
 		text.add(statusText,2,2,1,1);
-		text.setHgap(750);
+		text.setHgap(775);
 
 
 		GridPane center = new GridPane();
-		center.setPadding(new Insets(0, 25, 0, 15));
+		center.setPadding(new Insets(0, 25, 0, 0));
 
 		Text tests = new Text("Tests:");
 		tests.setFont(Font.font("Verdana", 20));
@@ -176,9 +177,9 @@ public class Test_UI {
 
 		buttons.setAlignment(Pos.TOP_CENTER);
 		buttons.setPadding(new Insets(20));
-		buttons.add(refactor, 1, 1);
-		buttons.add(compile, 2, 1);
-		buttons.add(returnButton, 3, 1);
+		buttons.add(refactor, 0, 1);
+		buttons.add(compile, 1, 1);
+		buttons.add(returnButton, 2, 1);
 		
 		stage.setOnCloseRequest(e -> {timer.kill();});
 		stage.setScene(new Scene(borderPane, width, height));
