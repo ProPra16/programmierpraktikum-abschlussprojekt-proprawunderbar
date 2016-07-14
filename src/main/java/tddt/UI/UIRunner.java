@@ -145,9 +145,11 @@ public class UIRunner extends Application {
 		String classCode = "failure";
 		String testName = "failure";
 		String testCode = "failure";
+		String exerciseName = "failure";
+		String description = "failure";
 		boolean babystep = false;
 		boolean timetracking = false;
-		double time = 0.0;
+		int time = 0;
 		
 		
 		List<Exercise> exercises = new ArrayList<>();
@@ -165,6 +167,8 @@ public class UIRunner extends Application {
 			Node node = list.item(i);
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				Element element = (Element) node;
+				exerciseName = element.getAttribute("name");
+				description = element.getElementsByTagName("description").item(0).getTextContent();
 			
 				NodeList classes = element.getElementsByTagName("classes");
 				Node classNode = classes.item(0);
@@ -194,7 +198,7 @@ public class UIRunner extends Application {
 						babystep = babystepElement.getAttribute("value").equals("True");
 					
 					if(babystep){
-						time = Double.parseDouble(babystepElement.getAttribute("time"));
+						time = Integer.parseInt(babystepElement.getAttribute("time"));
 					}
 					Element timetrackerElement = (Element) configElement.getElementsByTagName("timetracking").item(0);
 					timetracking = timetrackerElement.getAttribute("value").equals("True");
@@ -205,11 +209,11 @@ public class UIRunner extends Application {
 				
 			}
 			if(!babystep){
-				Exercise e = new Exercise(className, classCode, testName, testCode, babystep, timetracking);
+				Exercise e = new Exercise(className, classCode, testName, testCode, babystep, timetracking, exerciseName,description);
 				exercises.add(i, e);
 			}
 			else{
-				Exercise e = new Exercise(className, classCode, testName, testCode, babystep, timetracking,time);
+				Exercise e = new Exercise(className, classCode, testName, testCode, babystep, timetracking,time, exerciseName,description);
 				exercises.add(i, e);
 			}
 			

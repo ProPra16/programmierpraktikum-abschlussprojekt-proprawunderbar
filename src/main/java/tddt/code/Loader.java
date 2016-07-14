@@ -1,7 +1,6 @@
 package tddt.code;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -44,11 +43,9 @@ public class Loader{
         Button one = new Button("1");
         one.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         one.setEffect(blend);
-        File OneExists = new File("1Aufgabenstellung.txt");
-
         exerciseList = exercises;
 
-        if(!OneExists.exists()){
+        if(exercises.size()<1){
             one.setMouseTransparent(true);
             one.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
@@ -56,7 +53,7 @@ public class Loader{
 
         one.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("1", Loader.exerciseList.get(0) );
+                Test_UI.runTestUI(Loader.exerciseList.get(0) );
             } catch (IOException e1) {
             }
 
@@ -66,14 +63,13 @@ public class Loader{
         Button two = new Button("2");
         two.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         two.setEffect(blend);
-        File TwoExists = new File("2Aufgabenstellung.txt");
-        if(!TwoExists.exists()){
+        if(exercises.size()<2){
             two.setMouseTransparent(true);
             two.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         two.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("2", Loader.exerciseList.get(1));
+                Test_UI.runTestUI(Loader.exerciseList.get(1));
             } catch (IOException e1) {
             }
             stage.close();
@@ -82,14 +78,13 @@ public class Loader{
         Button three = new Button("3");
         three.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         three.setEffect(blend);
-        File ThreeExists = new File("3Aufgabenstellung.txt");
-        if(!ThreeExists.exists()){
+        if(exercises.size()<3){
             three.setMouseTransparent(true);
             three.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         three.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("3", Loader.exerciseList.get(2));
+                Test_UI.runTestUI( Loader.exerciseList.get(2));
             } catch (IOException e1) {
             }
             stage.close();
@@ -98,14 +93,13 @@ public class Loader{
         Button four = new Button("4");
         four.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         four.setEffect(blend);
-        File FourExists = new File("4Aufgabenstellung.txt");
-        if(!FourExists.exists()){
+        if(exercises.size()<4){
             four.setMouseTransparent(true);
             four.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         four.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("4", Loader.exerciseList.get(3));
+                Test_UI.runTestUI(Loader.exerciseList.get(3));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -115,14 +109,13 @@ public class Loader{
         Button five = new Button("5");
         five.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         five.setEffect(blend);
-        File FiveExists = new File("5Aufgabenstellung.txt");
-        if(!FiveExists.exists()){
+        if(exercises.size()<5){
             five.setMouseTransparent(true);
             five.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         five.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("5", Loader.exerciseList.get(4));
+                Test_UI.runTestUI(Loader.exerciseList.get(4));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -132,14 +125,13 @@ public class Loader{
         Button six = new Button("6");
         six.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         six.setEffect(blend);
-        File SixExists = new File("6Aufgabenstellung.txt");
-        if(!SixExists.exists()){
+        if(exercises.size()<6){
             six.setMouseTransparent(true);
             six.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         six.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("6", Loader.exerciseList.get(5));
+                Test_UI.runTestUI(Loader.exerciseList.get(5));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -148,14 +140,13 @@ public class Loader{
         Button seven = new Button("7");
         seven.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         seven.setEffect(blend);
-        File SevenExists = new File("7Aufgabenstellung.txt");
-        if(!SevenExists.exists()){
+        if(exercises.size()<7){
             seven.setMouseTransparent(true);
             seven.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         seven.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("7", Loader.exerciseList.get(6));
+                Test_UI.runTestUI(Loader.exerciseList.get(6));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -165,14 +156,13 @@ public class Loader{
         Button eight = new Button("8");
         eight.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         eight.setEffect(blend);
-        File EightExists = new File("8Aufgabenstellung.txt");
-        if(!EightExists.exists()){
+        if(exercises.size()<8){
             eight.setMouseTransparent(true);
             eight.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         eight.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("8", Loader.exerciseList.get(7));
+                Test_UI.runTestUI( Loader.exerciseList.get(7));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -182,14 +172,13 @@ public class Loader{
         Button nine = new Button("9");
         nine.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         nine.setEffect(blend);
-        File NineExists = new File("9Aufgabenstellung.txt");
-        if(!NineExists.exists()){
+        if(exercises.size()<9){
             nine.setMouseTransparent(true);
             nine.setStyle("-fx-font: 25 georgia; -fx-text-fill: #000000; -fx-font-weight: bold; -fx-base: #985656");
         }
         nine.setOnAction(e -> {
             try {
-                Test_UI.runTestUI("9", Loader.exerciseList.get(8));
+                Test_UI.runTestUI(Loader.exerciseList.get(8));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

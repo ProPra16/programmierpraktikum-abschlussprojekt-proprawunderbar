@@ -37,18 +37,18 @@ public class Test_UI {
 	public static String sourceBackup;
 	public static String testBackup;
 	public static Text timerText = new Text();
-	public static Timer timer = new Timer(timerText, false, 20);
+	public static Timer timer;
 
-	public static void runTestUI(String x, Exercise exercise) throws IOException {
+	public static void runTestUI(Exercise exercise) throws IOException {
+		timer = new Timer(timerText, exercise.babystep, exercise.time);
+
 		timer.start();
 		BorderPane borderPane = new BorderPane();
 		GridPane text = new GridPane();
 		sourceBackup = exercise.classCode;
 		testBackup = exercise.testCode;
 
-		String input = new String(String.valueOf(Files.readAllLines(Paths.get(x + "Aufgabenstellung.txt"))));
-		String input2 = input.substring(1, input.length() - 1);
-		titel.setText(input2);
+		titel.setText(exercise.description);
 
 		DropShadow shadow = new DropShadow();
 		shadow.setOffsetY(3.0f);
@@ -192,7 +192,7 @@ public class Test_UI {
 		stage.setOnCloseRequest(e -> {timer.kill();});
 		stage.setScene(new Scene(borderPane, width, height));
 		stage.initStyle(StageStyle.UTILITY);
-		stage.setTitle("Übung" + x);
+		stage.setTitle("Übung: " + exercise.exerciseName);
 		stage.show();
 	}
 
