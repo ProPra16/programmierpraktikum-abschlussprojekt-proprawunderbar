@@ -87,7 +87,6 @@ public class Test_UI {
 		});
 		Button compile = new Button("Kompilieren");
 		compile.setOnAction(e -> {
-//					System.out.println("Hallo Welt!");
 					compileOutput.setText("");
 			      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName,compileOutput);
 			      	
@@ -177,7 +176,6 @@ public class Test_UI {
 		compileOutput.setCache(true);
 		compileOutput.setEditable(false);
 
-		// sourceCode.setEditable(false);
 		center.add(testCode, 0, 1);
 		center.add(sourceCode, 1, 1);
 		center.add(compileOutput, 0, 2, 2, 1);
@@ -202,7 +200,7 @@ public class Test_UI {
 	}
 
 	public static void switchStatus(boolean track) {
-		timer.setTo(0);
+		timer.reset();
 		if(track)
 			Tracker.switchStatus();
 		if (status.equals("writeTest")) {
