@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import tddt.code.Compile;
 import tddt.code.Timer;
+import tddt.code.Tracker;
 
 public class Test_UI {
 	private static Stage stage = new Stage();
@@ -66,7 +67,7 @@ public class Test_UI {
 
 		GridPane buttons = new GridPane();
 		Button refactor = new Button("Refactor");
-		refactor.setPrefSize(500, 30);
+		refactor.setPrefSize(375, 30);
 		refactor.setFont(Font.font("Verdana", 20));
 		refactor.setEffect(shadow);
 		refactor.setCache(true);
@@ -93,14 +94,14 @@ public class Test_UI {
 		});
 		System.out.println(exercise.className);
 		System.out.println(exercise.testName);
-		compile.setPrefSize(500, 30);
+		compile.setPrefSize(375, 30);
 		compile.setFont(Font.font("Verdana", 20));
 		compile.setEffect(shadow);
 		compile.setCache(true);
 		compile.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
 
 		Button returnButton = new Button("Zurück");
-		returnButton.setPrefSize(500, 30);
+		returnButton.setPrefSize(375, 30);
 		returnButton.setFont(Font.font("Verdana", 20));
 		returnButton.setEffect(shadow);
 		returnButton.setCache(true);
@@ -109,6 +110,15 @@ public class Test_UI {
 			if (status.equals("fixTest"))
 				returnToTest();
 
+		});
+		Button trackingButton = new Button("Tracking");
+		trackingButton.setPrefSize(375, 30);
+		trackingButton.setFont(Font.font("Verdana", 20));
+		trackingButton.setEffect(shadow);
+		trackingButton.setCache(true);
+		trackingButton.setStyle("-fx-font-weight: bold;");
+		trackingButton.setOnAction(e ->{
+			Tracker.displayTimes();
 		});
 
 		textdesign(titel,blend);
@@ -121,7 +131,7 @@ public class Test_UI {
 
 		text.add(timerText,2,1,1,1);
 		text.add(statusText,2,2,1,1);
-		text.setHgap(775);
+		text.setHgap(250);
 
 
 		GridPane center = new GridPane();
@@ -180,6 +190,7 @@ public class Test_UI {
 		buttons.add(refactor, 0, 1);
 		buttons.add(compile, 1, 1);
 		buttons.add(returnButton, 2, 1);
+		buttons.add(trackingButton, 3, 1);
 		
 		stage.setOnCloseRequest(e -> {timer.kill();});
 		stage.setScene(new Scene(borderPane, width, height));
@@ -190,6 +201,7 @@ public class Test_UI {
 
 	public static void switchStatus() {
 		timer.setTo(0);
+		Tracker.switchStatus();
 		if (status.equals("writeTest")) {
 			sourceBackup = sourceCode.getText();
 			testBackup = testCode.getText();
