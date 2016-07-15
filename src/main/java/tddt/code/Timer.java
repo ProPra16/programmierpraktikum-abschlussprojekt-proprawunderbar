@@ -87,10 +87,6 @@ public class Timer {
 		seconds = 0;
 	}
 
-	public void setTo(int newSeconds) {
-		seconds = newSeconds;
-	}
-
 	private int getSeconds() {
 		int temp_seconds = seconds;
 		while (temp_seconds >= 60) {

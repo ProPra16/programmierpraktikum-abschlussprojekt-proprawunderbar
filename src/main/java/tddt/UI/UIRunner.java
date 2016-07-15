@@ -181,8 +181,6 @@ public class UIRunner extends Application {
 					Element classElement = (Element) classesElement.getElementsByTagName("class").item(0);
 					className = classElement.getAttribute("name");
 					classCode = classesElement.getElementsByTagName("class").item(0).getTextContent();
-//					System.out.println("Class Name: "+className);
-//					System.out.println("Code: "+classCode);
 				}
 				NodeList tests = element.getElementsByTagName("tests");
 				Node testNode = tests.item(0);
@@ -191,8 +189,6 @@ public class UIRunner extends Application {
 					Element testElement = (Element) testsElement.getElementsByTagName("test").item(0);
 					testName = testElement.getAttribute("name");
 					testCode = testsElement.getElementsByTagName("test").item(0).getTextContent();
-//					System.out.println("Test Name: " +testName);
-//					System.out.println("Test Code: "+testCode);
 				}
 				NodeList config = element.getElementsByTagName("config");
 				Node configNode = config.item(0);
@@ -206,9 +202,6 @@ public class UIRunner extends Application {
 					}
 					Element timetrackerElement = (Element) configElement.getElementsByTagName("timetracking").item(0);
 					timetracking = timetrackerElement.getAttribute("value").equals("True");
-//					System.out.print("Babystep: "+babystep);
-//					System.out.println("  Time: "+time);
-//					System.out.println("Timetracking: "+timetracking);
 				}
 				
 			}
