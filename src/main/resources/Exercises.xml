@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <excercises>
-	<exercise name="Römische Zahlen 1">
-		<description>Konvertiert arabische in römische Zahlen</description>
+	<exercise name="Fibonnachi ohne Babystep">
+		<description>Prüft ob eine Zahl eine Fibonnachi Zahl ist</description>
 		<classes>
-			<class name="RomanNumberConverter">
-public class RomanNumberConverter {
+			<class name="FibonnachiTester">
+public class FibonnachiTester {
 
 }
 			</class>
 		</classes>
 		<tests>
-			<test name="RomanNumbersTest">
+			<test name="FibonnachiTesterTest">
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class RomanNumbersTest {
+public class FibonbachiTesterTest {
 	@Test
 	public void testSomething() {
 	}
@@ -27,21 +27,21 @@ public class RomanNumbersTest {
 			<timetracking value="True" />
 		</config>
 	</exercise>
-	<exercise name="Römische Zahlen 2">
-		<description>Konvertiert arabische in römische Zahlen</description>
+	<exercise name="FibonnachiTester mit Babystep">
+		<description>Prüft ob eine Zahl eine Fibonnachi Zahl ist</description>
 		<classes>
-			<class name="RomanNumberConverter">
-public class RomanNumberConverter {
+			<class name="FibonnachiTester">
+public class FibonnachiTester {
 
 }
 			</class>
 		</classes>
 		<tests>
-			<test name="RomanNumbersTest">
+			<test name="FibonnachiTesterTest">
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class RomanNumbersTest {
+public class FibonnachiTesterTest {
 	@Test
 	public void testSomething() {
 	}
