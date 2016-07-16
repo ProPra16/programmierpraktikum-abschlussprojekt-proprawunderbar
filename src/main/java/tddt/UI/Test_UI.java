@@ -82,13 +82,13 @@ public class Test_UI {
 			}
 			else {
 				compileOutput.setText("");
-		      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName,compileOutput);
+		      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName);
 			}
 		});
 		Button compile = new Button("Kompilieren");
 		compile.setOnAction(e -> {
 					compileOutput.setText("");
-			      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName,compileOutput);
+			      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName);
 			      	
 
 		});

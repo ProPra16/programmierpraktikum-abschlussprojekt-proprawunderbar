@@ -3,7 +3,7 @@ package tests;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import javafx.scene.control.TextArea;
+import exercises.Exercise;
 import tddt.code.Compile;
 
 
@@ -21,7 +21,8 @@ public class CompileTester {
         //code soll nicht kompilen können
         code = "public class HelloWorld{}";
         testCode = "safasd";
-        Compile.compile(code, codeClassName, testCode, testClassName,new TextArea());
+        Exercise TestExercise = new Exercise(codeClassName, code, testClassName, testCode, false, false, "TestDatei", "DUMMY");
+        Compile.compile(code, codeClassName, testCode, testClassName);
         assertEquals(Compile.compilerResult.hasCompileErrors(), true);
 }
       

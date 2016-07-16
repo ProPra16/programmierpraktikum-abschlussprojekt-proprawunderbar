@@ -20,7 +20,7 @@ public class Compile {
 	public static CompilerResult compilerResult;
 	static TextField outputConsole;
 	
-	public static void compile(String code,String codeClassName, String tests, String testClassName, TextArea output){
+	public static void compile(String code,String codeClassName, String tests, String testClassName){
 
 		test = new CompilationUnit(testClassName, tests, true);
 		program = new CompilationUnit(codeClassName, code, false);
@@ -60,8 +60,8 @@ public class Compile {
 	}
 		
 		
-	public static void runTests(String code,String codeClassName, String tests, String testClassName, TextArea output){
-		compile(code ,codeClassName , tests, testClassName, output);
+	public static void runTests(String code,String codeClassName, String tests, String testClassName){
+		compile(code ,codeClassName , tests, testClassName);
 		if(compilerResult.hasCompileErrors())
 			return;
 		failedTests=0;
@@ -76,8 +76,8 @@ public class Compile {
 			TestFailure[] failureArray = new TestFailure[testFailures.size()];
 			failureArray = testFailures.toArray(failureArray);
 			for(int i=0; i<failureArray.length;i++){
-				output.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMethodName());
-				output.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMessage());
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMethodName());
+				Test_UI.compileOutput.setText(Test_UI.compileOutput.getText()+" \n"+ failureArray[i].getMessage());
 				System.out.println(failureArray[i].getMethodName());
 				System.out.println(failureArray[i].getMessage());
 			}
