@@ -8,6 +8,9 @@ import exercises.Exercise;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.DropShadow;
@@ -185,6 +188,21 @@ public class Loader{
             stage.close();
         });
 
+        CheckBox Baby = new CheckBox();
+        Baby.setText("BabySteps aktivieren");
+        Baby.setSelected(true);
+
+        Slider slider = new Slider(50, 100, 50);
+
+        Label label = new Label(String.format("Zeit: %d",
+                (int) slider.getValue()));
+
+        slider.valueProperty().addListener(
+                (ov, oldValue, newValue) -> {
+                    int value = newValue.intValue();
+                    label.setText(String.format("Zeit: %d", value));
+                }
+        );
 
         border.setCenter(root);
         border.setStyle("-fx-background-color: #E0E0E0");
@@ -202,6 +220,9 @@ public class Loader{
         root.add(seven, 0, 2);
         root.add(eight, 1, 2);
         root.add(nine, 2, 2);
+        root.add(Baby, 0, 3);
+        root.add(slider, 1, 3);
+        root.add(label, 2, 3);
 
 
         stage.setScene(new Scene(border, 350, 350));
