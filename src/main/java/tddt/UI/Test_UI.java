@@ -189,7 +189,7 @@ public class Test_UI {
 		borderPane.setStyle("-fx-background-color: #E0E0E0");
 
 		hBoxbuttons.setPadding(new Insets(20));
-		hBoxbuttons.getChildren().setAll(compile, refactor, returnButton, trackingButton);
+		hBoxbuttons.getChildren().addAll(compile, refactor, returnButton, trackingButton);
 
 		buttons.setAlignment(Pos.TOP_CENTER);
 		buttons.setPadding(new Insets(20));
