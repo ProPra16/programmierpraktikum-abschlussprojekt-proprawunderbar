@@ -82,6 +82,7 @@ public class Test_UI {
 			testCode.setText(testBackup);
 			switchStatus(false);
 			titel.setText("Refactoring");
+			timerText.setVisible(false);
 			}
 			else {
 				compileOutput.setText("");
@@ -92,7 +93,7 @@ public class Test_UI {
 		compile.setOnAction(e -> {
 					compileOutput.setText("");
 			      	Compile.runTests(sourceCode.getText(),exercise.className, testCode.getText(), exercise.testName);
-			      	
+			      	timerText.setVisible(true);
 
 		});
 		System.out.println(exercise.className);
@@ -104,6 +105,7 @@ public class Test_UI {
 		compile.setStyle("-fx-font-weight: bold; -fx-base: #FFFFFF");
 
 		Button returnButton = new Button("Zurück");
+		timerText.setVisible(true);
 		returnButton.setPrefSize(375, 30);
 		returnButton.setFont(Font.font("Verdana", 20));
 		returnButton.setEffect(shadow);
@@ -112,6 +114,7 @@ public class Test_UI {
 		returnButton.setOnAction(e -> {
 			if (status.equals("fixTest"))
 				returnToTest();
+			timerText.setVisible(true);
 
 		});
 		Button trackingButton = new Button("Tracking");
