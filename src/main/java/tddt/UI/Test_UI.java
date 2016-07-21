@@ -15,6 +15,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -67,6 +68,8 @@ public class Test_UI {
 		blend.setTopInput(innerShadow);
 
 		GridPane buttons = new GridPane();
+		HBox hBoxbuttons = new HBox();
+
 		Button refactor = new Button("Refactor");
 		refactor.setPrefSize(375, 30);
 		refactor.setFont(Font.font("Verdana", 20));
@@ -184,6 +187,9 @@ public class Test_UI {
 		borderPane.setTop(text);
 		borderPane.setBottom(buttons);
 		borderPane.setStyle("-fx-background-color: #E0E0E0");
+
+		hBoxbuttons.setPadding(new Insets(20));
+		hBoxbuttons.getChildren().setAll(compile, refactor, returnButton, trackingButton);
 
 		buttons.setAlignment(Pos.TOP_CENTER);
 		buttons.setPadding(new Insets(20));
