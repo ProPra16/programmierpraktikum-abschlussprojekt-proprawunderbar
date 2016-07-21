@@ -72,12 +72,12 @@ public class Loader{
 
         one.setOnAction(e -> {
             try {
-                Test_UI.runTestUI(Loader.exerciseList.get(0) );
                 Exercise eins = exerciseList.get(0);
                 eins.babystep = Baby.isSelected();
                 if (Baby.isSelected()) {
                      eins.time = (int) slider.getValue();
                 }
+                Test_UI.runTestUI(Loader.exerciseList.get(0) );
 
             } catch (IOException e1) {
             }
@@ -94,7 +94,12 @@ public class Loader{
         }
         two.setOnAction(e -> {
             try {
-                Test_UI.runTestUI(Loader.exerciseList.get(1));
+                Exercise zwei = exerciseList.get(1);
+                zwei.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    zwei.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(1) );
             } catch (IOException e1) {
             }
             stage.close();
@@ -109,7 +114,12 @@ public class Loader{
         }
         three.setOnAction(e -> {
             try {
-                Test_UI.runTestUI( Loader.exerciseList.get(2));
+                Exercise drei = exerciseList.get(2);
+                drei.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    drei.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(2) );
             } catch (IOException e1) {
             }
             stage.close();
@@ -124,7 +134,12 @@ public class Loader{
         }
         four.setOnAction(e -> {
             try {
-                Test_UI.runTestUI(Loader.exerciseList.get(3));
+                Exercise vier = exerciseList.get(3);
+                vier.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    vier.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(3) );
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -140,7 +155,12 @@ public class Loader{
         }
         five.setOnAction(e -> {
             try {
-                Test_UI.runTestUI(Loader.exerciseList.get(4));
+                Exercise fuenf = exerciseList.get(4);
+                fuenf.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    fuenf.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(4) );
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -156,7 +176,12 @@ public class Loader{
         }
         six.setOnAction(e -> {
             try {
-                Test_UI.runTestUI(Loader.exerciseList.get(5));
+                Exercise sechs = exerciseList.get(5);
+                sechs.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    sechs.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(5) );
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -171,7 +196,12 @@ public class Loader{
         }
         seven.setOnAction(e -> {
             try {
-                Test_UI.runTestUI(Loader.exerciseList.get(6));
+                Exercise sieben = exerciseList.get(6);
+                sieben.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    sieben.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(6) );
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -187,7 +217,12 @@ public class Loader{
         }
         eight.setOnAction(e -> {
             try {
-                Test_UI.runTestUI( Loader.exerciseList.get(7));
+                Exercise acht = exerciseList.get(7);
+                acht.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    acht.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(7) );
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -203,7 +238,12 @@ public class Loader{
         }
         nine.setOnAction(e -> {
             try {
-                Test_UI.runTestUI(Loader.exerciseList.get(8));
+                Exercise neun = exerciseList.get(8);
+                neun.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                    neun.time = (int) slider.getValue();
+                }
+                Test_UI.runTestUI(Loader.exerciseList.get(8) );
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
