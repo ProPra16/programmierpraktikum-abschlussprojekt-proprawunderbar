@@ -68,7 +68,7 @@ public class Test_UI {
 		blend.setTopInput(innerShadow);
 
 		GridPane buttons = new GridPane();
-		HBox hBoxbuttons = new HBox();
+		//HBox hBoxbuttons = new HBox();
 
 		Button refactor = new Button("Refactor");
 		refactor.setPrefSize(375, 30);
@@ -188,8 +188,8 @@ public class Test_UI {
 		borderPane.setBottom(buttons);
 		borderPane.setStyle("-fx-background-color: #E0E0E0");
 
-		hBoxbuttons.setPadding(new Insets(20));
-		hBoxbuttons.getChildren().addAll(compile, refactor, returnButton, trackingButton);
+		//hBoxbuttons.setPadding(new Insets(20));
+		//hBoxbuttons.getChildren().addAll(compile, refactor, returnButton, trackingButton);
 
 		buttons.setAlignment(Pos.TOP_CENTER);
 		buttons.setPadding(new Insets(20));
@@ -203,6 +203,7 @@ public class Test_UI {
 		stage.initStyle(StageStyle.UTILITY);	
 		stage.setTitle("Übung: " + exercise.exerciseName);
 		stage.show();
+		stage.setResizable(false);
 	}
 
 	public static void switchStatus(boolean track) {
