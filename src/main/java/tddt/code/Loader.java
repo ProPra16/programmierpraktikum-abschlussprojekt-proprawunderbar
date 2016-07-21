@@ -192,7 +192,7 @@ public class Loader{
         Baby.setText("BabySteps aktivieren");
         Baby.setSelected(true);
 
-        Slider slider = new Slider(50, 100, 50);
+        Slider slider = new Slider(60, 300, 60);
 
         Label label = new Label(String.format("Zeit: %d",
                 (int) slider.getValue()));
