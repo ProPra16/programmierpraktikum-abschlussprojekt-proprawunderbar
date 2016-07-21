@@ -43,6 +43,22 @@ public class Loader{
         blend.setBottomInput(shadow);
         blend.setTopInput(innerShadow);
 
+        CheckBox Baby = new CheckBox();
+        Baby.setText("BabySteps aktivieren");
+        Baby.setSelected(true);
+
+        Slider slider = new Slider(60, 300, 60);
+
+        Label label = new Label(String.format("Zeit: %d",
+                (int) slider.getValue()));
+
+        slider.valueProperty().addListener(
+                (ov, oldValue, newValue) -> {
+                    int value = newValue.intValue();
+                    label.setText(String.format("Zeit: %d", value));
+                }
+        );
+
         Button one = new Button("1");
         one.setStyle("-fx-font: 25 georgia;-fx-font-weight: bold; -fx-base: #FFFFFF");
         one.setEffect(blend);
@@ -57,6 +73,12 @@ public class Loader{
         one.setOnAction(e -> {
             try {
                 Test_UI.runTestUI(Loader.exerciseList.get(0) );
+                Exercise eins = exerciseList.get(0);
+                eins.babystep = Baby.isSelected();
+                if (Baby.isSelected()) {
+                     eins.time = (int) slider.getValue();
+                }
+
             } catch (IOException e1) {
             }
 
@@ -187,22 +209,6 @@ public class Loader{
             }
             stage.close();
         });
-
-        CheckBox Baby = new CheckBox();
-        Baby.setText("BabySteps aktivieren");
-        Baby.setSelected(true);
-
-        Slider slider = new Slider(60, 300, 60);
-
-        Label label = new Label(String.format("Zeit: %d",
-                (int) slider.getValue()));
-
-        slider.valueProperty().addListener(
-                (ov, oldValue, newValue) -> {
-                    int value = newValue.intValue();
-                    label.setText(String.format("Zeit: %d", value));
-                }
-        );
 
         border.setCenter(root);
         border.setStyle("-fx-background-color: #E0E0E0");
