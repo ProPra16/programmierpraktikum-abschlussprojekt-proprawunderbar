@@ -14,7 +14,7 @@ import vk.core.internal.InternalCompiler;
 
 public class Compile {
 	
-	static int failedTests = 0;
+	public static int failedTests = 0;
 	static CompilationUnit test;
 	static CompilationUnit program;
 	public static CompilerResult compilerResult;
