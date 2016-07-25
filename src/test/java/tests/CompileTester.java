@@ -124,7 +124,7 @@ public class CompileTester {
     //hier sollen alle Tests stimmen
     @Test
     public void test0Misses() throws Exception {
-    	Exercise TestExercise = testlist.get(1) ;
+    	Exercise TestExercise = testlist.get(2) ;
     	Compile.runTests(TestExercise.classCode, TestExercise.className, TestExercise.testCode, TestExercise.testName);
         assertEquals(Compile.failedTests, 0);
   } 
@@ -132,7 +132,7 @@ public class CompileTester {
    //hier solle der Test fehlschlagen
     @Test
     public void test1Miss() throws Exception {
-    	Exercise TestExercise = testlist.get(1) ;
+    	Exercise TestExercise = testlist.get(3) ;
     	Compile.runTests(TestExercise.classCode, TestExercise.className, TestExercise.testCode, TestExercise.testName);
     	assertEquals(Compile.failedTests, 1);
   } 
