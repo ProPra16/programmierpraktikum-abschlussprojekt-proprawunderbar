@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<excercises>
+	<exercise name="compileFail">
+		<description>Prüft ob eine Zahl eine Fibonnachi Zahl ist</description>
+		<classes>
+			<class name="HelloWorld">
+public class HelloWorld {sfdaf
+
+}
+			</class>
+		</classes>
+		<tests>
+			<test name="HelloWorldTest">
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class HelloWorldTest {
+	@Test
+	public void testSomething() {sdaswa
+	}
+}
+			</test>
+		</tests>
+		<config>
+			<babysteps value="False" />
+			<timetracking value="True" />
+		</config>
+	</exercise>
+	<exercise name="compileSuccess">
+		<description>Prüft ob eine Zahl eine Fibonnachi Zahl ist</description>
+		<classes>
+			<class name="HelloWorld">
+public class HelloWorld {
+
+}
+			</class>
+		</classes>
+		<tests>
+			<test name="HelloWorldTest">
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class HelloWorldTest {
+	@Test
+	public void testSomething() {
+	}
+}
+			</test>
+		</tests>
+		<config>
+			<babysteps value="True" time="120" />
+			<timetracking value="True" />
+		</config>
+	</exercise>
+	<exercise name="test0Misses">
+		<description>Prüft ob eine Zahl eine Fibonnachi Zahl ist</description>
+		<classes>
+			<class name="HelloWorld">
+public class HelloWorld {
+	public static String foo(){
+		return(foo);
+	}
+}
+			</class>
+		</classes>
+		<tests>
+			<test name="HelloWorldTest">
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class HelloWorldTest {
+	@Test
+	public void testSomething() {
+		assertEquals(HelloWorld.foo, "foo");
+	}
+}
+			</test>
+		</tests>
+		<config>
+			<babysteps value="True" time="120" />
+			<timetracking value="True" />
+		</config>
+	</exercise>	
+<exercise name="test1Miss">
+		<description>Prüft ob eine Zahl eine Fibonnachi Zahl ist</description>
+		<classes>
+			<class name="HelloWorld">
+public class HelloWorld {
+	public static String foo(){
+		return(Foo);
+	}
+}
+			</class>
+		</classes>
+		<tests>
+			<test name="HelloWorldTest">
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class HelloWorldTest {
+	@Test
+	public void testSomething() {
+		assertEquals(HelloWorld.foo, "foo");
+	}
+}
+			</test>
+		</tests>
+		<config>
+			<babysteps value="True" time="120" />
+			<timetracking value="True" />
+		</config>
+	</exercise>	
+	
+
+</excercises>
